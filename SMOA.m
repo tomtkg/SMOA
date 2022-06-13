@@ -55,12 +55,15 @@ classdef SMOA < ALGORITHM
                 Select = subsetSelection(Obj,Objhat,Problem.maxFE);
                 W = W(Select,:);
             end
+            N = length(W);
             
             %% Generate decision variables
-            decs = zeros(length(W),Problem.D);
+            decs = zeros(N,Problem.D);
             for i = 1 : Problem.D
                 decs(:,i) = estimator(W,X,Dec(:,i));
             end
+            decs = max(decs,repmat(obj.lower,N,1));
+            decs = min(decs,repmat(obj.upper,N,1));
             
             %% Generate population
             Population = [Population,SOLUTION(decs)];
