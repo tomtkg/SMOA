@@ -4,7 +4,7 @@ classdef SMOA < ALGORITHM
 % H --- 2.6e4 --- Size of uniformly distributed L1 unit vector set
 
 %------------------------------- Reference --------------------------------
-% T. Takagi, K. Takadama, and H. Sato, 'Supervised multi-objective
+% T. Takagi, K. Takadama, and H. Sato, Supervised multi-objective
 % optimization algorithm using estimation, Proceedings of the IEEE Congress
 % on Evolutionary Computation, 2022. (to appear).
 %------------------------------- Copyright --------------------------------
@@ -35,7 +35,7 @@ classdef SMOA < ALGORITHM
             if ~isempty(ver('nnet'))
                 estimator = @(W,X,Y) sim(newrbe(X',Y'),W')';
             else
-                I = ones(1,M);
+                I = ones(1,Problem.M);
                 estimator = @(W,X,Y) predictor(W, ...
                     dacefit(X,Y,'regpoly0','corrgauss',I,1e-3*I,1e3*I));
             end

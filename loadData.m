@@ -12,7 +12,7 @@ function Population = loadData()
 % This function is written by Tomoaki Takagi
 
     dir = fullfile(pwd,'Algorithms','Multi-objective optimization','SMOA');
-    [file,path] = uigetfile('*.*','Select a Supervised Data File',dir);
+    [file,path] = uigetfile('*.*','Select supervised data file',dir);
 
     if endsWith(file,'.mat') % PlarEMO's default save file
         load(fullfile(path, file),'result');

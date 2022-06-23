@@ -15,7 +15,7 @@ function Select = subsetSelection(Obj,Objhat,N)
     Obj = [Obj;Objhat];
     %% Select the representative objective vector set
     LpNormD = pdist2(Obj,Obj);
-    Select = false(1,size(Obj,1));
+    Select = false(1,length(Obj));
     Select(1:Len) = true;
     % Greedy inclusion distance-based subset slection
     while sum(Select) < N
