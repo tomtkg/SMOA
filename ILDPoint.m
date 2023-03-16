@@ -2,14 +2,14 @@ function [W,N] = ILDPoint(N,M)
 %ILD - Generate a set of uniformly distributed points on the unit
 %hyperplane named Incremental lattice desigin.
 %
-%   [W,N] = ILDPoint(N,M) returns approximately N uniformly distributed
+%   [W,L] = ILDPoint(N,M) returns approximately N uniformly distributed
 %   points with M objectives on the unit hyperplane.
 %
 %   Note that the number of sampled points L may be slightly larger than
 %   the predefined size N due to the need for uniformity.
 %
 %   Example:
-%       [W,N] = ILDPoint(286,10)
+%       [W,L] = ILDPoint(286,10)
 %
 %------------------------------- Reference --------------------------------
 % T. Takagi, K. Takadama, and H. Sato, Incremental lattice design of weight
